@@ -1,0 +1,290 @@
+[
+  {
+    "id": "bpfdoor_mutex_file",
+    "file": "[BPF] 01_bpfdoor_mutex_file.yar",
+    "title": "BPFDoor에서 사용하는 Mutex 파일 존재 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "bpfdoor_binary",
+    "file": "[BPF] 02_bpfdoor_binary.yar",
+    "title": "BPFdoor에서 사용하는 binary 값 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "yara"
+  },
+  {
+    "id": "bpfdoor_controller_binary",
+    "file": "[BPF] 03_bpfdoor_controller_binary.yar",
+    "title": "BPFdoor에서 사용하는 컨트롤러 binary 값 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "yara"
+  },
+  {
+    "id": "bpfdoor_masic_sequence",
+    "file": "[BPF] 04_bpfdoor_magic_sequence.yar",
+    "title": "BPFdoor에서 사용하는 매직 시퀀스 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "bpf_number_of_bpf_filter_lsof",
+    "file": "[BPF] 05_bpf_register_lsof.yar",
+    "title": "lsof 명령어 내 RAW_SOCK 등록 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "bpf_number_of_bpf_filter_packet",
+    "file": "[BPF] 06_bpf_register_packet.yar",
+    "title": "packet 파일 내 BPF 등록 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "bpf_number_of_bpf_filter_netstat",
+    "file": "[BPF] 07_bpf_register_netstat.yar",
+    "title": "netstat 내 RAW Socket 등록 여부 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "create_account",
+    "file": "[EVT] 01_create_account.yar",
+    "title": "리눅스 로그에서 계정생성 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "remove_data",
+    "file": "[EVT] 02_remove_data.yar",
+    "title": "파일 삭제 행위 탐지",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "detect_attack_tool_execution_log",
+    "file": "[EVT] 03_attack_tool.yar",
+    "title": "시스템 로그 및 셸 히스토리를 통한 공격도구 실행 탐지",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "detect_ftp_anonymous_login_audit",
+    "file": "[EVT] 04_login_anonym_FTP_audit.yar",
+    "title": "리눅스 로그에서 FTP Anonymous 로그인 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "detect_dataexport",
+    "file": "[EVT] 05_dataexport_history.yar",
+    "title": "데이터 유출 또는 다운로드 도구 실행 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "priviledge_escalation",
+    "file": "[EVT] 06_privi_escalation.yar",
+    "title": "CVE-2021-4034 권한 상승 취약점 악용 여부 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "bruteforce_Failed_password_for_root",
+    "file": "[EVT] 07_bruteforce_Failed_password_for_root.yar",
+    "title": "root 계정 브루트포스 공격 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "bruteforce_Failed_password_for_sa",
+    "file": "[EVT] 08_bruteforce_Failed_password_for_sa.yar",
+    "title": "mssql-server sa 계정 브루트포스 공격 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "clr_enabled",
+    "file": "[EVT] 09_clr enabled.yar",
+    "title": "mssql-server clr 활성화 여부 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "change_fn_time",
+    "file": "[EVT] 10_change_filename_time_from_SFTP.yar",
+    "title": "SFTP를 통한 파일명 및 시간 변경 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "wget_access",
+    "file": "[EVT] 11_wget_access.yar",
+    "title": "wget을 이용한 다운로드 시도 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "sudo_host_lpe_cve_2025_32462",
+    "file": "[EVT] 12_sudo_host_lpe_cve_2025_32462.yar",
+    "title": "Sudo host 활용 권한 상승 취약점 (CVE-2025-32462) 탐지",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "sudo_chroot_lpe_cve_2025_32463",
+    "file": "[EVT] 13_sudo_chroot_lpe_cve_2025_32463.yar",
+    "title": "Sudo chroot 활용 권한 상승 취약점 (CVE-2025-32463) 탐지",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "detect_persistence_registration_log",
+    "file": "[EVT] 14_persistence_registration_log.yar",
+    "title": "시스템 서비스/데몬/Cron 등록을 통한 지속성 시도 탐지",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "detect_chattr_immutable_removal",
+    "file": "[EVT] 15_chattr_immutable_removal.yar",
+    "title": "시스템 로그 및 셸 히스토리를 통한 'chattr -i' (파일 불변 속성 제거) 실행 탐지",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "detect_portscan_tool_execution",
+    "file": "[EVT] 16_portscan_tool_execution.yar",
+    "title": "시스템 로그 및 셸 히스토리를 통한 포트스캔 도구 실행 탐지",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "cleartext_telnet_ftp_used",
+    "file": "[EVT] 19_cleartext_telnet_ftp_used.yar",
+    "title": "내부망에서 비암호화 관리 프로토콜(FTP/Telnet) 사용 여부",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "webshell_jsp",
+    "file": "[JSP] 01_webshell_jsp.yar",
+    "title": "jsp를 이용한 시스템 명령 실행 함수 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "reverse_connection_volatile_php",
+    "file": "[PHP] 01_reverse_connection_php.yar",
+    "title": "PHP를 이용한 리버스 커넥션 코드 fsockopen",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "yara"
+  },
+  {
+    "id": "webshell_php",
+    "file": "[PHP] 02_webshell_php.yar",
+    "title": "PHP를 이용한 시스템 명령 실행 함수 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "plague_binary",
+    "file": "[PLAGUE] 01_plague_binary.yar",
+    "title": "Plague에서 사용하는 binary 값 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "yara"
+  },
+  {
+    "id": "plague_logfile",
+    "file": "[PLAGUE] 02_plague_logfile.yar",
+    "title": "plague 악성코드에서 사용하는 로그 파일 존재 여부 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "reverse_connection_volatile_python",
+    "file": "[PS] 01_reverse_connection_python.yar",
+    "title": "스크립트 기반 리버스 커넥션 프로세스 여부 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "FTP_anonym",
+    "file": "[PS] 02_check_anonym_FTP.yar",
+    "title": "FTP Anonymous enable 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "remote_command",
+    "file": "[PS] 03_check_remote_command.yar",
+    "title": "원격 명령 서비스 동작 여부 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "vnc_service",
+    "file": "[PS] 04_check_vnc.yar",
+    "title": "VNC 서비스 동작 여부 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "running_in_the_shm",
+    "file": "[PS] 05_shm_running_process.yar",
+    "title": "shm 폴더에서 동작하는 프로세스 여부 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "lineparse"
+  },
+  {
+    "id": "environ_redirection_null",
+    "file": "[PS] 06_environ_dev_null.yar",
+    "title": "HISTFILE 환경변수 null 리다이렉션 여부 확인",
+    "score": 2,
+    "target_os": "linux",
+    "backend": "yara"
+  },
+  {
+    "id": "deleted_binary_process",
+    "file": "[PS] 07_deleted_binary_process.yar",
+    "title": "바이너리가 삭제된 프로세스 동작 여부 확인",
+    "score": 1,
+    "target_os": "linux",
+    "backend": "lineparse"
+  }
+]

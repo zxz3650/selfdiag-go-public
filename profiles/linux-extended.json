@@ -1,0 +1,466 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "uname",
+        "-a"
+      ],
+      "kind": "host_info"
+    },
+    {
+      "argv": [
+        "ps",
+        "-eo",
+        "pid,ppid,uid,comm"
+      ],
+      "kind": "processes"
+    },
+    {
+      "argv": [
+        "ss",
+        "-an"
+      ],
+      "kind": "sockets"
+    },
+    {
+      "argv": [
+        "systemctl",
+        "list-unit-files",
+        "--no-pager"
+      ],
+      "kind": "services"
+    },
+    {
+      "argv": [
+        "date",
+        "--iso-8601=seconds"
+      ],
+      "kind": "host_info"
+    },
+    {
+      "argv": [
+        "uptime"
+      ],
+      "kind": "host_info"
+    },
+    {
+      "argv": [
+        "lscpu"
+      ],
+      "kind": "host_info"
+    },
+    {
+      "argv": [
+        "dmesg"
+      ],
+      "kind": "kernel_log"
+    },
+    {
+      "argv": [
+        "ps",
+        "-eo",
+        "pid,ppid,uid,lstart,args"
+      ],
+      "kind": "processes"
+    },
+    {
+      "argv": [
+        "lsmod"
+      ],
+      "kind": "modules"
+    },
+    {
+      "argv": [
+        "vmstat"
+      ],
+      "kind": "process_metrics"
+    },
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-w"
+      ],
+      "kind": "open_files"
+    },
+    {
+      "argv": [
+        "ss",
+        "-anp"
+      ],
+      "kind": "sockets"
+    },
+    {
+      "argv": [
+        "ss",
+        "-0bp"
+      ],
+      "kind": "bpf_sockets"
+    },
+    {
+      "argv": [
+        "ip",
+        "address",
+        "show"
+      ],
+      "kind": "network_interfaces"
+    },
+    {
+      "argv": [
+        "ip",
+        "route",
+        "show"
+      ],
+      "kind": "routes"
+    },
+    {
+      "argv": [
+        "ip",
+        "neigh",
+        "show"
+      ],
+      "kind": "neighbors"
+    },
+    {
+      "argv": [
+        "who",
+        "-a"
+      ],
+      "kind": "login_sessions"
+    },
+    {
+      "argv": [
+        "w"
+      ],
+      "kind": "login_sessions"
+    },
+    {
+      "argv": [
+        "last",
+        "-n",
+        "100"
+      ],
+      "kind": "login_history"
+    },
+    {
+      "argv": [
+        "lastb",
+        "-n",
+        "100"
+      ],
+      "kind": "login_history"
+    },
+    {
+      "argv": [
+        "lastlog"
+      ],
+      "kind": "login_history"
+    },
+    {
+      "argv": [
+        "df",
+        "-h"
+      ],
+      "kind": "storage"
+    },
+    {
+      "argv": [
+        "lsblk",
+        "-J"
+      ],
+      "kind": "storage"
+    },
+    {
+      "argv": [
+        "blkid"
+      ],
+      "kind": "storage"
+    },
+    {
+      "argv": [
+        "dpkg-query",
+        "-W"
+      ],
+      "kind": "packages"
+    },
+    {
+      "argv": [
+        "rpm",
+        "-qa"
+      ],
+      "kind": "packages"
+    },
+    {
+      "argv": [
+        "systemctl",
+        "list-units",
+        "--all",
+        "--no-pager"
+      ],
+      "kind": "services"
+    },
+    {
+      "argv": [
+        "journalctl",
+        "--no-pager",
+        "-n",
+        "1000",
+        "-o",
+        "short-iso"
+      ],
+      "kind": "journal"
+    }
+  ],
+  "dynamic": "extended: bounded user homes and Linux /proc; optional browser databases, environments/shadow, executable bytes",
+  "files": [
+    {
+      "kind": "host_info",
+      "path": "/etc/os-release"
+    },
+    {
+      "kind": "host_info",
+      "path": "/usr/lib/os-release"
+    },
+    {
+      "kind": "host_info",
+      "path": "/proc/version"
+    },
+    {
+      "kind": "auth",
+      "path": "/var/log/auth.log"
+    },
+    {
+      "kind": "auth",
+      "path": "/var/log/secure"
+    },
+    {
+      "kind": "event_log",
+      "path": "/var/log/syslog"
+    },
+    {
+      "kind": "accounts",
+      "path": "/etc/passwd"
+    },
+    {
+      "kind": "accounts",
+      "path": "/etc/group"
+    },
+    {
+      "kind": "accounts",
+      "path": "/etc/nsswitch.conf"
+    },
+    {
+      "kind": "storage",
+      "path": "/etc/fstab"
+    },
+    {
+      "kind": "storage",
+      "path": "/proc/partitions"
+    },
+    {
+      "kind": "storage",
+      "path": "/proc/mounts"
+    },
+    {
+      "kind": "network_config",
+      "path": "/etc/hosts"
+    },
+    {
+      "kind": "network_config",
+      "path": "/etc/hosts.allow"
+    },
+    {
+      "kind": "network_config",
+      "path": "/etc/hosts.deny"
+    },
+    {
+      "kind": "network_config",
+      "path": "/etc/network/interfaces"
+    },
+    {
+      "kind": "network_config",
+      "path": "/etc/resolv.conf"
+    },
+    {
+      "kind": "login_binary",
+      "path": "/var/log/wtmp"
+    },
+    {
+      "kind": "login_binary",
+      "path": "/var/log/btmp"
+    },
+    {
+      "kind": "login_binary",
+      "path": "/var/log/lastlog"
+    },
+    {
+      "kind": "login_binary",
+      "path": "/run/utmp"
+    },
+    {
+      "kind": "persistence",
+      "path": "/etc/crontab"
+    },
+    {
+      "kind": "persistence",
+      "path": "/etc/rc.local"
+    },
+    {
+      "kind": "persistence",
+      "path": "/etc/profile"
+    },
+    {
+      "kind": "persistence",
+      "path": "/etc/ld.so.preload"
+    },
+    {
+      "kind": "config",
+      "path": "/etc/sudoers"
+    }
+  ],
+  "limits": "512 artifacts / 64 MiB total / 8 MiB per file; bounded selectors may collect only a subset",
+  "profile": "extended",
+  "source_os": "linux",
+  "trees": [
+    {
+      "path": "/etc/cron.d",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/cron.daily",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/cron.hourly",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/cron.weekly",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/cron.monthly",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/var/spool/cron",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/init.d",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/systemd/system",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/usr/lib/systemd/system",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/profile.d",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/var/log",
+      "kind": "logs",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/ssh",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/pam.d",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/sudoers.d",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/apache2",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/nginx",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/php",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/mysql",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/etc/postgresql",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/var/www",
+      "kind": "web_source",
+      "max_entries": 64,
+      "max_depth": 5,
+      "suffixes": [
+        ".php",
+        ".jsp",
+        ".jspx",
+        ".html",
+        ".js"
+      ]
+    },
+    {
+      "path": "/srv/www",
+      "kind": "web_source",
+      "max_entries": 64,
+      "max_depth": 5,
+      "suffixes": [
+        ".php",
+        ".jsp",
+        ".jspx",
+        ".html",
+        ".js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/uname",
+        "-a"
+      ],
+      "kind": "host_info"
+    },
+    {
+      "argv": [
+        "/usr/bin/sw_vers"
+      ],
+      "kind": "host_info"
+    },
+    {
+      "argv": [
+        "/usr/sbin/sysctl",
+        "-n",
+        "hw.machine"
+      ],
+      "kind": "host_info"
+    },
+    {
+      "argv": [
+        "/bin/ps",
+        "-axo",
+        "pid,ppid,uid,comm"
+      ],
+      "kind": "processes"
+    },
+    {
+      "argv": [
+        "/usr/sbin/netstat",
+        "-an"
+      ],
+      "kind": "sockets"
+    },
+    {
+      "argv": [
+        "/bin/launchctl",
+        "list"
+      ],
+      "kind": "services"
+    },
+    {
+      "argv": [
+        "/usr/bin/uptime"
+      ],
+      "kind": "host_info"
+    },
+    {
+      "argv": [
+        "/usr/bin/dscl",
+        ".",
+        "-list",
+        "/Users",
+        "UniqueID"
+      ],
+      "kind": "accounts"
+    },
+    {
+      "argv": [
+        "/bin/ps",
+        "-axo",
+        "pid,ppid,uid,lstart,command"
+      ],
+      "kind": "processes"
+    },
+    {
+      "argv": [
+        "/usr/sbin/lsof",
+        "-nP"
+      ],
+      "kind": "open_files"
+    },
+    {
+      "argv": [
+        "/sbin/ifconfig",
+        "-a"
+      ],
+      "kind": "network_interfaces"
+    },
+    {
+      "argv": [
+        "/usr/sbin/netstat",
+        "-rn"
+      ],
+      "kind": "routes"
+    },
+    {
+      "argv": [
+        "/usr/sbin/arp",
+        "-an"
+      ],
+      "kind": "neighbors"
+    },
+    {
+      "argv": [
+        "/usr/bin/who",
+        "-a"
+      ],
+      "kind": "login_sessions"
+    },
+    {
+      "argv": [
+        "/usr/bin/w"
+      ],
+      "kind": "login_sessions"
+    },
+    {
+      "argv": [
+        "/usr/bin/last",
+        "-10"
+      ],
+      "kind": "login_history"
+    },
+    {
+      "argv": [
+        "/bin/df",
+        "-h"
+      ],
+      "kind": "storage"
+    },
+    {
+      "argv": [
+        "/usr/sbin/diskutil",
+        "list",
+        "-plist"
+      ],
+      "kind": "storage"
+    },
+    {
+      "argv": [
+        "/usr/sbin/pkgutil",
+        "--pkgs"
+      ],
+      "kind": "packages"
+    },
+    {
+      "argv": [
+        "/bin/launchctl",
+        "print",
+        "system"
+      ],
+      "kind": "services"
+    },
+    {
+      "argv": [
+        "/usr/bin/systemextensionsctl",
+        "list"
+      ],
+      "kind": "system_extensions"
+    },
+    {
+      "argv": [
+        "/usr/bin/log",
+        "show",
+        "--last",
+        "1h",
+        "--style",
+        "json",
+        "--predicate",
+        "process == \"sshd\" OR process == \"sudo\" OR process == \"loginwindow\""
+      ],
+      "kind": "unified_log"
+    }
+  ],
+  "dynamic": "extended: bounded user homes and Linux /proc; optional browser databases, environments/shadow, executable bytes",
+  "files": [
+    {
+      "kind": "accounts",
+      "path": "/etc/passwd"
+    },
+    {
+      "kind": "accounts",
+      "path": "/etc/group"
+    },
+    {
+      "kind": "network_config",
+      "path": "/etc/hosts"
+    },
+    {
+      "kind": "network_config",
+      "path": "/etc/resolv.conf"
+    },
+    {
+      "kind": "persistence",
+      "path": "/etc/crontab"
+    },
+    {
+      "kind": "persistence",
+      "path": "/etc/rc.common"
+    },
+    {
+      "kind": "persistence",
+      "path": "/etc/profile"
+    },
+    {
+      "kind": "persistence",
+      "path": "/etc/zprofile"
+    },
+    {
+      "kind": "persistence",
+      "path": "/etc/zshrc"
+    }
+  ],
+  "limits": "512 artifacts / 64 MiB total / 8 MiB per file; bounded selectors may collect only a subset",
+  "profile": "extended",
+  "source_os": "darwin",
+  "trees": [
+    {
+      "path": "/Library/LaunchAgents",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/Library/LaunchDaemons",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/System/Library/LaunchAgents",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/System/Library/LaunchDaemons",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/private/etc/periodic",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/private/var/at/tabs",
+      "kind": "persistence",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/private/var/log",
+      "kind": "logs",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/private/etc/ssh",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    },
+    {
+      "path": "/private/etc/pam.d",
+      "kind": "config",
+      "max_entries": 64,
+      "max_depth": 5
+    }
+  ]
+}
